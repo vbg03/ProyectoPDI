@@ -1,0 +1,260 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', serif;
+  background: #4e4034; /* fondo tipo cafecito con leche claro */
+  color: #4b3d2f;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(141, 108, 68, 0.4); /* fondo semi-transparente */
+  backdrop-filter: blur(10px); /* desenfoque para difuminar fondo */
+  -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+  color: rgb(255, 255, 255);
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* línea sutil abajo */
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #c8a97e;
+}
+
+.connect-btn {
+  padding: 8px 18px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.connect-btn:hover {
+  background-color: #564834;
+  color: rgb(255, 255, 255);
+  border-color: #63523b;
+}
+
+
+/* ENCABEZADO */
+header {
+  position: relative;
+  height: 300px; /* o el alto que quieras */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'DM Serif Display', serif; /* si elegiste una fuente elegante */
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://revistadiapason.com/wp-content/uploads/2023/03/t1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px) brightness(0.7); /* Difumina + oscurece */
+  z-index: 0;
+  transition: filter 0.8s ease-in-out;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 1; /* Para que el texto quede arriba del fondo */
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeIn 1.2s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* SECCIÓN DE SUBIR FOTO */
+.upload-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  background-color: #f0e2d0;
+  border-bottom: 3px solid #d8c3a5;
+}
+
+.upload-box,
+.preview-box {
+  background-color: #fff7ef;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.upload-box:hover,
+.preview-box:hover {
+  transform: scale(1.03);
+}
+
+input[type="file"] {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #d4a373;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* RESULTADO */
+.resultado-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #efe2d3;
+}
+
+.generada-box,
+.descripcion-box {
+  width: 45%;
+  background-color: #fff3e0;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.descripcion-box button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #b08968;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.descripcion-box button:hover {
+  background-color: #7f5539;
+}
+
+/* SECCIÓN CIVILIZACIONES */
+.civilizaciones {
+  padding: 40px 20px;
+  background-color: #f7ede2;
+}
+
+.civilizaciones h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6b4226;
+  border-bottom: 2px solid #d4a373;
+}
+
+.calima-contenido,
+.quimbaya-contenido {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.calima-contenido p,
+.quimbaya-contenido p {
+  width: 50%;
+  background-color: #fff9f4;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.calima-contenido img,
+.quimbaya-contenido img {
+  width: 45%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* EXTRA INFO */
+.extra-info {
+  padding: 30px 20px;
+  background-color: #e3d5ca;
+  text-align: center;
+  font-size: 1.1rem;
+  border-top: 3px solid #b08968;
+}
+
+.extra-info h2 {
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #d6ccc2;
+  color: #5e503f;
+  font-size: 0.9rem;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
