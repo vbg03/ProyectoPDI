@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CiviAPP</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -17,74 +17,107 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="logo">CiviAPP</div>
-        <a href="#civilizaciones" class="connect-btn">Saber Más</a>
-    </nav>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="img/favicon.png" alt="Logo" class="logo-img">
+                    CiviAPP
+                </div>
+                <a href="#civilizaciones" class="connect-btn">Saber Más</a>
+            </nav>
 
-    <header class="header">
-        <h1>¡BIENVENIDO!</h1>
-        <p>Sube una foto para comenzar la experiencia</p>
-    </header>
+            <header class="header">
+                <h1>¡BIENVENIDO!</h1>
+                <p>Sube una foto para comenzar la experiencia</p>
+            </header>
 
-    <section class="upload-section">
-        <div class="upload-box">
-            <h2>¡Veamos a qué civilización pertenecerías!</h2>
-            <input type="file" id="uploadFoto" accept="image/*">
+            <section class="upload-section">
+                <div class="upload-box">
+                    <h2>¡Veamos a qué civilización pertenecerías!</h2>
+                    <div class="custom-upload">
+                        <label for="uploadFoto" class="upload-btn">📷 Subir foto</label>
+                        <input type="file" id="uploadFoto" accept="image/*" hidden>
+                        <button id="generarBtn" class="generate-btn" disabled> Generar foto</button>
+                    </div>
+                </div>
+                <div class="preview-box">
+                    <p id="previewText">PREVIEW</p>
+                    <img id="userPhoto" src="" alt="Tu foto" style="display: none;">
+                </div>
+            </section>
+
+            <section class="resultado-section">
+                <div class="generada-box">
+                    <p>FOTO GENERADA</p>
+                    <img id="generatedPhoto" src="" alt="Foto generada" style="display: none;">
+                </div>
+                <div class="descripcion-box">
+                    <p>Así te verías si fueses parte de la civilización prehispánica "<span
+                            id="nombreCivilizacion">Nombre</span>"</p>
+                    <p class="caracteristicas">Esta civilización se caracteriza por blablabla...</p>
+                    <button onclick="mostrarInfo()">Saber más sobre esta civilización</button>
+                </div>
+            </section>
+
+            <section id="civilizaciones" class="civilizaciones">
+                <div class="contenedor">
+                    <h2>Cultura Calima</h2>
+                    <div class="calima-contenido">
+                        <p>Los Calima fueron un conjunto de culturas prehispánicas que habitaron el suroccidente de
+                            Colombia,
+                            especialmente en el Valle del Cauca. Destacaron por su avanzada orfebrería en oro, cerámica
+                            colorida
+                            y
+                            complejas estructuras sociales. Sus piezas más representativas muestran figuras humanas y
+                            animales
+                            con
+                            un alto nivel de detalle, revelando una profunda conexión con la naturaleza y el mundo
+                            espiritual.
+                            La
+                            civilización Calima es un símbolo del arte y la sofisticación de las culturas andinas
+                            precolombinas.
+                        </p>
+                        <img src="https://viajandox.com.co/uploads/Museo%20del%20Oro%20Calima_1.jpg"
+                            alt="Imagen de los Calima">
+                    </div>
+
+                    <h2>Cultura Quimbaya</h2>
+                    <div class="quimbaya-contenido">
+                        <img src="https://assets.isu.pub/document-structure/230406024326-2747cbaae9040bcdcef375daf8a7bb64/v1/8f69ced88745dd9506d15ef6412ca7aa.jpeg"
+                            alt="Imagen de los Quimbaya">
+                        <p>Los Quimbaya fueron una de las civilizaciones más sobresalientes del Eje Cafetero colombiano,
+                            reconocidos
+                            mundialmente por su maestría en la orfebrería del oro. Sus famosos poporos y figuras votivas
+                            reflejan no
+                            solo una gran habilidad técnica, sino también una rica cosmovisión espiritual. Vivían en
+                            armonía con
+                            su
+                            entorno y sus obras eran usadas en rituales sagrados. Hoy, su legado sigue vivo como un
+                            ícono de la
+                            riqueza cultural e identidad ancestral de Colombia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="extra-info">
+                <h2>¿Sabías esto?</h2>
+                <p>Estos pueblos prehispánicos dejaron un legado increíble en el arte, la orfebrería y la cultura de
+                    Colombia.
+                    ¡Explora y descubre más!</p>
+            </section>
+
+            <footer>
+                <p>© 2025 CiviAPP - Todos los derechos reservados</p>
+            </footer>
+
+
         </div>
-        <div class="preview-box">
-            <p>Aquí saldría la foto que el usuario subió</p>
-            <img id="userPhoto" src="" alt="Tu foto" style="display: none;">
-        </div>
-    </section>
-
-    <section class="resultado-section">
-        <div class="generada-box">
-            <p>Aquí saldría la foto que se generaría</p>
-            <img id="generatedPhoto" src="" alt="Foto generada" style="display: none;">
-        </div>
-        <div class="descripcion-box">
-            <p>Así te verías si fueses parte de la civilización prehispánica "<span
-                    id="nombreCivilizacion">Nombre</span>"</p>
-            <p class="caracteristicas">Esta civilización se caracteriza por blablabla...</p>
-            <button onclick="mostrarInfo()">Saber más sobre esta civilización</button>
-        </div>
-    </section>
-
-    <section id="civilizaciones" class="civilizaciones">
-        <h2>Cultura Calima</h2>
-        <div class="calima-contenido">
-            <p>Los Calima fueron un conjunto de culturas prehispánicas que habitaron el suroccidente de Colombia,
-                especialmente en el Valle del Cauca. Destacaron por su avanzada orfebrería en oro, cerámica colorida y
-                complejas estructuras sociales. Sus piezas más representativas muestran figuras humanas y animales con
-                un alto nivel de detalle, revelando una profunda conexión con la naturaleza y el mundo espiritual. La
-                civilización Calima es un símbolo del arte y la sofisticación de las culturas andinas precolombinas.</p>
-            <img src="https://viajandox.com.co/uploads/Museo%20del%20Oro%20Calima_1.jpg" alt="Imagen de los Calima">
-        </div>
-
-        <h2>Cultura Quimbaya</h2>
-        <div class="quimbaya-contenido">
-            <img src="https://assets.isu.pub/document-structure/230406024326-2747cbaae9040bcdcef375daf8a7bb64/v1/8f69ced88745dd9506d15ef6412ca7aa.jpeg"
-                alt="Imagen de los Quimbaya">
-            <p>Los Quimbaya fueron una de las civilizaciones más sobresalientes del Eje Cafetero colombiano, reconocidos
-                mundialmente por su maestría en la orfebrería del oro. Sus famosos poporos y figuras votivas reflejan no
-                solo una gran habilidad técnica, sino también una rica cosmovisión espiritual. Vivían en armonía con su
-                entorno y sus obras eran usadas en rituales sagrados. Hoy, su legado sigue vivo como un ícono de la
-                riqueza cultural e identidad ancestral de Colombia.</p>
-        </div>
-    </section>
-
-    <section class="extra-info">
-        <h2>¿Sabías esto?</h2>
-        <p>Estos pueblos prehispánicos dejaron un legado increíble en el arte, la orfebrería y la cultura de Colombia.
-            ¡Explora y descubre más!</p>
-    </section>
-
-    <footer>
-        <p>© 2025 Tu Nombre o Proyecto - Todos los derechos reservados</p>
-    </footer>
-
+    </div>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
 </body>
 
 </html>
