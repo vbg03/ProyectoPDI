@@ -47,7 +47,7 @@ html {
 }
 
 .logo-img {
-  width: 80px;   /* Puedes ajustar según el tamaño que quieras */
+  width: 80px;   
   height: 32px;
   object-fit: contain;
 }
@@ -82,16 +82,16 @@ html {
 }
 
 .connect-btn:hover {
-  background-color: #564834;
+  background-color: #292217;
   color: rgb(255, 255, 255);
-  border-color: #63523b;
+  border-color: #534339;
 }
 
 
 /* ENCABEZADO */
 header {
   position: relative;
-  height: 300px; /* o el alto que quieras */
+  height: 300px; 
   color: white;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@ header {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  font-family: 'DM Serif Display', serif; /* si elegiste una fuente elegante */
+  font-family: 'DM Serif Display', serif; 
 }
 
 header::before {
@@ -185,6 +185,7 @@ input[type="file"] {
 
 .generate-btn {
   margin-top: 15px;
+  margin-left: 30px;
   padding: 12px 24px;
   background-color: #c8a97e;
   color: #2e2e2e;
